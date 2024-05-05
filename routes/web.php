@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
 Route::get('/get-timezones/{country}', [TimeZoneController::class , 'getTimezones'])->name('get-timezones');
 
 Route::post('subscribe/{plan}' , [SubscriptionController::class , 'subscribe'])->name('subscribe.store');

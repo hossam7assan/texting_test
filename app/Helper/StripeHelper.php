@@ -18,10 +18,10 @@ class StripeHelper
         $this->stripe = new StripeClient(config('stripe.secret_key'));
     }
 
-    public function pay(array $item): void
+    public function pay(array $items): void
     {
         $checkout = $this->stripe->checkout->sessions->create([
-            'line_items' => [$item],
+            'line_items' => [$items],
             'mode' => 'payment',
             'success_url' => route('subscribe.success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('subscribe.cancel') . '?session_id={CHECKOUT_SESSION_ID}',
@@ -39,20 +39,20 @@ class StripeHelper
             $this->stripe->checkout->sessions->retrieve($sessionId);
         } catch (Exception $e) {
             throw new NotFoundHttpException();
-  }
- }
+        }
+    }
 
- public function createLineItems($price, $planName): array
+    public function createLineItem($price, $productName, $quantity = 1): array
     {
         return [
             'price_data' => [
                 'currency' => config('stripe.currency'),
                 'product_data' => [
-                    'name' => $planName,
+                    'name' => $productName,
                 ],
                 'unit_amount' => $price * 100,
             ],
-            'quantity' => 1,
- ];
- }
+            'quantity' => $quantity,
+        ];
+    }
 }
