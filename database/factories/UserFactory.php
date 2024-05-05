@@ -22,8 +22,8 @@ class UserFactory extends Factory
             'phone' => $faker->phoneNumber,
             'email' => $faker->unique()->safeEmail,
             'email_verified_at' => now(),
-            'password' => bcrypt('password'), // You may hash it better
-            'timezone_id' => \App\Models\Timezone::inRandomOrder()->first()->id,
+            'password' => bcrypt('password'),
+            'timezones_id' => \App\Models\Timezone::inRandomOrder()->first()->id,
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
