@@ -53,8 +53,8 @@ class User extends Authenticatable
         return $this->belongsTo(Timezone::class);
     }
 
-    public function subscription()
-    {
-        return $this->belongsTo(Subscription::class);
-    }
+    public function subscriptions()
+{
+    return $this->hasMany(Subscription::class);
+}
 }
