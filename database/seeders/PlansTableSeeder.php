@@ -17,7 +17,7 @@ class PlansTableSeeder extends Seeder
             'name' => 'The Pluto',
             'price' => 29,
             'messages' => 500,
-            'textwords' => true,
+            'textwords' => 5,
             'rollover' => true,
             'contacts' => true,
         ]);
@@ -26,7 +26,7 @@ class PlansTableSeeder extends Seeder
             'name' => 'The Mercury',
             'price' => 49,
             'messages' => 1000,
-            'textwords' => true,
+            'textwords' => 5,
             'rollover' => true,
             'contacts' => true,
         ]);
@@ -35,7 +35,7 @@ class PlansTableSeeder extends Seeder
             'name' => 'The Venus',
             'price' => 79,
             'messages' => 2000,
-            'textwords' => true,
+            'textwords' => 5,
             'rollover' => true,
             'contacts' => true,
         ]);
