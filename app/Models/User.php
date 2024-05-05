@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function timezone()
     {
-        return $this->belongsTo(Timezone::class);
+        return $this->belongsTo(TimeZone::class, 'timezones_id');
     }
 
     public function subscriptions()

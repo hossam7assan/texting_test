@@ -36,8 +36,9 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
 
-                        <li class="nav-item {{ request()->routeIs('plans.*') ? "menu-is-opening menu-open active" : '' }}">
-                            <a href="#" class="nav-link {{ request()->routeIs('plans.*') ? "active" : '' }}">
+                        <li
+                            class="nav-item {{ request()->routeIs('plans.*') ? 'menu-is-opening menu-open active' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('plans.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-box"></i>
                                 <p>
                                     plans
@@ -55,6 +56,30 @@
                                     'title' => '',
                                     'icon' => 'fa-solid fa-plus',
                                     'route' => 'dashboard.plans.create',
+                                ])
+                            </ul>
+                        </li>
+
+                        <li
+                            class="nav-item {{ request()->routeIs('users.*') ? 'menu-is-opening menu-open active' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    users
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @include('dashboard.layouts.inc.nav-list-item', [
+                                    'title' => '',
+                                    'icon' => 'fa-regular fa-eye',
+                                    'route' => 'dashboard.users.index',
+                                ])
+
+                                @include('dashboard.layouts.inc.nav-list-item', [
+                                    'title' => '',
+                                    'icon' => 'fa-solid fa-plus',
+                                    'route' => 'dashboard.users.create',
                                 ])
                             </ul>
                         </li>
