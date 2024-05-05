@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PlanController;
 
 Route::group([
     'controller' => AuthController::class,
@@ -24,4 +25,6 @@ Route::group([
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('plans', PlanController::class);
 });
