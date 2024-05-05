@@ -16,8 +16,8 @@ class SubscriptionsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::all();
-        $plans = Plan::all();
+        $users = User::get();
+        $plans = Plan::get();
 
         foreach ($users as $user) {
             Subscription::create([

@@ -3,14 +3,14 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Timezone;
+use App\Models\TimeZone;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Timezone>
  */
 class TimezoneFactory extends Factory
 {
-    protected $model = Timezone::class;
+    protected $model = TimeZone::class;
     public function definition(): array
     {
         return [

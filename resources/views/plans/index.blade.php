@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bootstrap')
 <h3>Choose the plan you'd like to Subscribe in :</h3>
 
 <div class="row">
