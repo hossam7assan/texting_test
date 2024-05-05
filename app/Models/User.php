@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
-        'time_zone_id'
+        'timezones_id'
     ];
 
     /**
