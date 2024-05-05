@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('timezone_id');
-            $table->foreign('timezone_id')->references('id')->on('timezones');
             $table->rememberToken();
             $table->timestamps();
         });
